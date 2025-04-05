@@ -247,7 +247,7 @@
                         <div class="timeline-item">
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
-                                <div class="timeline-date">2021 - Present</div>
+                                <div class="timeline-date">07/2024 - Present</div>
                                 <h3 class="timeline-company">CM Websolution</h3>
                                 <p class="timeline-position">Backend Developer</p>
                                 <p>I work as a Backend Developer, managing server-side logic using PHP, Laravel, and MySQL. I collaborate with the front-end team, integrate third-party APIs, and develop dynamic websites with optimized performance.</p>
