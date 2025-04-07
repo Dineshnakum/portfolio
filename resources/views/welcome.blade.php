@@ -74,7 +74,7 @@
                         </div>
                         <div class="hero-image">
                             <div class="ghibli-character">
-                                <img src="{{ asset('assets/me.jpeg') }}" alt="my photo">
+                                <img src="{{ asset('assets/icon.png') }}" alt="my photo">
                             </div>
                         </div>
                     </div>
@@ -336,6 +336,7 @@
                                     <textarea id="message" name="message" class="form-control"></textarea>
                                     <p class="error" id="message_error"></p>
                                 </div>
+                                <p class="error" id="form_error"></p>
                                 <button type="submit" id="contact_btn" class="btn">Send Message</button>
                             </form>
                         </div>
@@ -376,13 +377,16 @@
                         error: function(xhr, status, error) {
                             btn.text(btnText);
                             btn.removeAttr('disabled');
+                            console.log(xhr);
                             if(xhr.status == 422) {
                                 let errors = xhr.responseJSON.errors;
                                 $.each(errors, function(key, error) {
                                     form.find(`#${key}_error`).text(error[0])
                                 });
+                            } else if (xhr.status == 429) {
+                                alert("Too Many request, try after some time");
                             } else {
-                                alert("Something went wrong!");
+                                alert("Something went wrong, try after some time.");
                             }
                         }
                     });
